@@ -1,9 +1,12 @@
 import express from "express";
-
+import { Order } from "../models/orders.js";
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.json('GET Success');
+  // get our Orders
+    Order.find() // invoke find without params will find all Orders
+        .then(orders => res.json(orders))
+        .catch(res.status(404).json(err));
 });
 router.post('/', (req, res) => {
     res.json('POST Success');
