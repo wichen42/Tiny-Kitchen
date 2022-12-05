@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   // get our Orders
     Order.find() // invoke find without params will find all Orders
         .then(orders => res.json(orders))
-        .catch(res.status(404).json(err));
+        .catch((err) => res.status(404).json(err));
 });
 router.post('/', (req, res) => {
   // post our Order
