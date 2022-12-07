@@ -1,8 +1,9 @@
 import React from 'react';
 import { Order } from './Order.jsx';
 
-export const Orders = orders => {
-    const ordersList = orders.map(order => {<Order order={order} key={order.id} />});
+const Orders = ({orders}) => {
+    console.log(orders);
+    const ordersList = orders.map(order => {return <Order order={order} key={order.id} />});
 
     return (
         <ul className="orders-list">
@@ -11,10 +12,5 @@ export const Orders = orders => {
     );
 };
 
+export default Orders;
 
-/* 
-class Orders extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-} */
