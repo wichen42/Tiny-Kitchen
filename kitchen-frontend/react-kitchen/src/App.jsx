@@ -27,11 +27,13 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="App"
+    style={Object.values(state.incompleteOrders).length === 0 ? {background: "black", color:"white"} : {}}
+    >
       <span>Incomplete Orders:</span>
-      <IncompleteOrders orders={Object.values(state.incompleteOrders)}/>
+      <IncompleteOrders orders={Object.values(state.incompleteOrders)} state={state} setState={setState}/>
       <span>Complete Orders:</span>
-      <CompleteOrders orders={Object.values(state.completeOrders)}/>
+      <CompleteOrders orders={Object.values(state.completeOrders)} state={state} setState={setState}/>
       <OrderForm />
     </div>
   )
