@@ -35,14 +35,14 @@ export const Order = ({order, state, setState}) => {
     }
 
     return ( 
-        <li className='order'>
+        <div className='order'>
             <span>{order.name}</span>
             <span>{order.address}</span>
             <span>{order.items}</span>
             <button
             onClick={(e) => handleClick(e)}
             >{order.isComplete ? "Complete" : "Incomplete"}</button>
-        </li>
+        </div>
      );
 }
  
