@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Order = ({order}) => {
     const handleClick = () => {
-        
+        console.log(order);
     }
 
     return ( 
@@ -11,7 +11,9 @@ export const Order = ({order}) => {
             <span>{order.name}</span>
             <span>{order.address}</span>
             <span>{order.items}</span>
-            <button>{order.isComplete ? "Complete" : "Incomplete"}</button>
+            <button
+            onClick={handleClick}
+            >{order.isComplete ? "Complete" : "Incomplete"}</button>
         </li>
      );
 }
