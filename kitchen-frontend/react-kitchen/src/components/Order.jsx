@@ -6,6 +6,7 @@ export const Order = ({order, state, setState}) => {
 
     const handleClick = (e) => {
         e.preventDefault();
+        e.stopPropagation();
         if (order.isComplete) {
             const updatedOrder = {
                 id: order.id, 
@@ -36,10 +37,13 @@ export const Order = ({order, state, setState}) => {
 
     return ( 
         <div className='order'>
-            <span>{order.name}</span>
-            <span>{order.address}</span>
-            <span>{order.items}</span>
+            <div className='order-details'>
+                <span>Name: {order.name}</span>
+                <span>Address: {order.address}</span>
+                <span>Items: {order.items}</span>
+            </div>
             <button
+            className='order-button'
             onClick={(e) => handleClick(e)}
             >{order.isComplete ? "Complete" : "Incomplete"}</button>
         </div>

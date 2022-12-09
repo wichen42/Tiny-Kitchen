@@ -39,11 +39,11 @@ function App() {
       >
         <div className={flipped ? "card-face card-front is-flipped" : "card-face card-front"}>
           <div className='incomplete-orders'>
-            <span>Incomplete Orders</span>
+            <h2 className='front-header'>Incomplete Orders</h2>
             <IncompleteOrders orders={Object.values(state.incompleteOrders)} state={state} setState={setState}/>
           </div>
           <div className='complete-orders'>
-              <span>Complete Orders</span>
+              <h2 className='front-header'>Complete Orders</h2>
               <CompleteOrders orders={Object.values(state.completeOrders)} state={state} setState={setState}/>
           </div>
         </div>
