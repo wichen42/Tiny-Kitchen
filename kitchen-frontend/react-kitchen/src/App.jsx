@@ -3,7 +3,9 @@ import IncompleteOrders from './components/Orders';
 import { OrderForm } from './components/OrderForm';
 import { useState } from 'react';
 import './App.css'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import * as orderActions from './store/orders';
 function App() {
   const [state, setState] = useState({
     completeOrders: {
@@ -25,7 +27,13 @@ function App() {
       },
     },
   });
+  const dispatch = useDispatch();
   const [flipped, setFlipped] = useState(false);
+
+  useEffect(() => {
+    const res = fetch('/api/orders')
+      .then(data => console.log(data.json()))
+  }, [])
 
   const handleFlip = (e) => {
     setFlipped(!flipped);

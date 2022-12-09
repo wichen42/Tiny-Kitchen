@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     address: req.body.address,
   });
   newOrder.save()
-    .then(order => res.json("Your Order is in the works!"))
+    .then(order => res.json(order))
     .catch(err => res.status(422).json(err));
 
 });
