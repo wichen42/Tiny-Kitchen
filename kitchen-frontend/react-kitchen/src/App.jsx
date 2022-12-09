@@ -44,7 +44,7 @@ function App() {
           </div>
           <div className='complete-orders'>
               <h2 className='front-header'>Complete Orders</h2>
-              <CompleteOrders orders={Object.values(state.completeOrders)} state={state} setState={setState}/>
+              <CompleteOrders orders={Object.values(state.completeOrders)} state={state} setState={setState} style={{backgroundColor: "#FF5500", color:"white"}}/>
           </div>
         </div>
         <div className="card-face card-back">

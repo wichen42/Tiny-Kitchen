@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 
-export const Order = ({order, state, setState}) => {
+export const Order = ({order, state, setState, style}) => {
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -45,6 +45,7 @@ export const Order = ({order, state, setState}) => {
             <button
             className='order-button'
             onClick={(e) => handleClick(e)}
+            style={order.isComplete ? style : {}}
             >{order.isComplete ? "Complete" : "Incomplete"}</button>
         </div>
      );

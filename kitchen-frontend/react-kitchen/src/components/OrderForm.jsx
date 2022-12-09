@@ -22,13 +22,22 @@ export const OrderForm = () => {
                 <img src={baby_chef} alt="baby-chef" className='picture'/>
             </div>
             <div className='form-body'>
-                <input type="text" placeholder="Name" id="order-name"/>
-                <input type="text" placeholder="Address" id="order-address" />
-                <input type="text" placeholder="Items" id="order-items"/>
+                <input type="text" className='form-input' placeholder="Name" id="order-name" 
+                onClick={(e) => e.stopPropagation()}
+                />
+                <input type="text" className='form-input' placeholder="Address" id="order-address" 
+                onClick={(e) => e.stopPropagation()}
+                />
+                <input type="text" className='form-input' placeholder="Items" id="order-items"
+                onClick={(e) => e.stopPropagation()}
+                />
                 <button
+                className='form-button'
                 onClick={(e) => handleComplete(e)}
                 >{complete ? "Complete" : "Incomplete"}</button>
                 <button type="submit"
+                className='form-button'
+                id='form-submit'
                 onClick={(e) => handleSubmit(e)}
                 >Submit</button>
             </div>
